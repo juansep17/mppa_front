@@ -1,0 +1,15 @@
+<div class="mitad float-left">
+  <h2>Users</h2>
+  <ul class="lista">
+    <li *ngFor="let user of listUser">
+      <h5 class="mb-1"><span class="badge badge-primary badge-pill">{{user.userPK}}</span> {{user.name}} {{user.lastName}} </h5>
+      <small>Documento: {{user.document}}</small>
+      <small>Rol: {{user.rolesFK}}</small>
+    </li>
+  </ul>
+</div>
+<div class="mitad float-right">
+  <app-services-add></app-services-add>
+</div>
+<!-- [class.selected]="service === selectedService"
+        (click)="onSelect(service)"  -->

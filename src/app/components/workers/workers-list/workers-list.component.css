@@ -1,0 +1,30 @@
+.lista{
+  list-style-type: none;
+}
+.lista li {
+  cursor: pointer;
+  position: relative;
+  left: 0;
+  background-color: #EEE;
+  margin: .5em;
+  padding: 10px;
+  border-radius: 4px;
+}
+.lista li:hover {
+  color: #607D8B;
+  background-color: #DDD;
+  left: .1em;
+}
+.lista li.selected {
+  background-color: #CFD8DC;
+  color: white;
+}
+.lista li.selected:hover {
+  background-color: #BBD8DC;
+  color: white;
+}
+.mitad{
+  padding-top: 30px;
+  padding-left: 50px;
+  width: 50%;
+}

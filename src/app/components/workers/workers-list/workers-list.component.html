@@ -1,0 +1,15 @@
+<div class="mitad float-left">
+  <h2>Workers</h2>
+  <ul class="lista">
+    <li *ngFor="let workers of work"
+        [class.selected]="workers === selectedWorker"
+        (click)="onSelect(workers)">
+      <h5 class="mb-1"><span class="badge badge-primary badge-pill">{{workers.id}}</span> {{workers.name}} {{workers.lastName}} </h5>
+      <small>Charge: {{workers.charge}}</small> <br/>
+      <small>Especiality: {{workers.especiality}}</small>
+    </li>
+  </ul>
+</div>
+<div class="mitad float-right">
+  <app-worker-add [worker]="selectedWorker"></app-worker-add>
+</div>

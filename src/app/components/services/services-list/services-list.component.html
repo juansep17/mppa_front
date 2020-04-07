@@ -1,0 +1,26 @@
+<div class="mitad float-left">
+  <h2>Services</h2>
+  <a (click)="openAdd()" class="badge badge-primary badge-pill hover add">+ Add</a>
+    <table class="lista table table-bordered table-striped text-center">
+      <tr>
+        <td>Id</td>
+        <td>Name</td>
+        <td>Cost</td>
+        <td>Actions</td>
+      </tr>
+      <tr *ngFor="let service of listService">
+        <td>{{service.servicesPK}}</td>
+        <td>{{service.name}}</td>
+        <td>{{service.cost}}</td>
+        <td>
+          <a (click)="openEdit(service)" class="badge badge-primary badge-pill hover edit">Edit</a>
+          <a class="badge badge-primary badge-pill hover delete">Delete</a>
+        </td>
+      </tr>
+    </table>
+</div>
+
+<div class="mitad float-right">
+  <app-services-edit *ngIf="showEdit" [service]="service"></app-services-edit>
+  <app-services-add *ngIf="showAdd"></app-services-add>
+</div>

@@ -1,0 +1,23 @@
+<div *ngIf=worker>
+
+  <h2>{{worker.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{worker.id}}</div>
+  <div>
+    <label>Name:
+      <input class="form-control form" [(ngModel)]="worker.name" placeholder="name"/>
+    </label>
+
+    <label>Last Name:
+      <input class="form-control form" [(ngModel)]="worker.lastName" placeholder="cost"/>
+    </label>
+
+    <label>Charge:
+      <input class="form-control form" [(ngModel)]="worker.charge" placeholder="name"/>
+    </label>
+
+    <label>Especiality:
+      <input class="form-control form" [(ngModel)]="worker.especiality" placeholder="cost"/>
+    </label>
+  </div>
+
+</div>
