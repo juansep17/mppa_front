@@ -21,11 +21,15 @@ export class RepositoryService {
     return this.req.post( root + `/add`, { data: entity });
   }
 
-  public update(entity) {
-    return this.req.put(`/edit`, { data: entity });
+  public update(root, entity) {
+    return this.req.put(root + `/edit`, { data: entity });
   }
 
   public findById(root) {
     return this.req.get(root + `/findById`, { queryParams: { id: 1 } });
+  }
+
+  public deleteService(root, service) {
+    return this.req.delete(root + `/delete`,  { queryParams: { id: service.servicesPK} });
   }
 }

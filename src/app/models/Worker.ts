@@ -1,7 +1,7 @@
 export interface Worker {
   id: number;
-  name: String;
-  lastName: String;
-  charge: String;
-  especiality: String;
+  name: string;
+  lastName: string;
+  charge: string;
+  especiality: string;
 }

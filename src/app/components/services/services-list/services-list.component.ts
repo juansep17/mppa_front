@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {Service} from '../../../models/Service';
 import {RepositoryService} from '../../../services/repository.service';
 import {Router} from '@angular/router';
-import {Services} from '@angular/core/src/view';
 
 @Component({
   selector: 'app-services-list',
@@ -41,6 +40,17 @@ export class ServicesListComponent implements OnInit {
     this.showEdit = true;
     this.showAdd = false;
     this.service = service;
+  }
+
+  delete(service: Service) {
+    this.repo.deleteService(`services`, service)
+      .then(response => {
+        // tslint:disable-next-line:no-shadowed-variable
+        this.listService = this.listService.filter(response => response !== service)
+        alert('Se eliminó correctamente');
+      }, error => {
+        console.log('Ocurrió un error al eliminarlo');
+      });
   }
 
 }

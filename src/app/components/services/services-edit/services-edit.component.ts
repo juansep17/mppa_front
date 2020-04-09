@@ -16,21 +16,16 @@ export class ServicesEditComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.repo.findById(`services`)
+
+  }
+
+  edit(service: Service) {
+    this.repo.update(`services`, service)
       .then(response => {
-        this.service = response;
+        console.log('Se editó correctamente el servicio' + service.name);
+        alert('Se editó el servicio' + service.name);
       }, error => {
-        console.log('Error al generar el usuario');
+        console.log('Error al editar el servicio');
       });
   }
-/*
-  edit() {
-    let id = localStorage.getItem('id');
-    this.repo.findById(`services`)
-      .then(response => {
-        this.service = response;
-      }, error => {
-        console.log('Error al generar el usuario');
-      });
-  }*/
 }

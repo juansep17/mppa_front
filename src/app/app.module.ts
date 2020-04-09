@@ -20,6 +20,8 @@ import {UsersAddComponent} from './components/users/users-add/users-add.componen
 import {RepositoryService} from './services/repository.service';
 import {HttpClientModule} from '@angular/common/http';
 import {ServicesEditComponent} from './components/services/services-edit/services-edit.component';
+import { WorkerEditComponent } from './components/workers/worker-edit/worker-edit.component';
+import { UsersEditComponent } from './components/users/users-edit/users-edit.component';
 
 
 @NgModule({
@@ -37,7 +39,9 @@ import {ServicesEditComponent} from './components/services/services-edit/service
     UsersComponent,
     UsersListComponent,
     UsersAddComponent,
-    ServicesEditComponent
+    ServicesEditComponent,
+    WorkerEditComponent,
+    UsersEditComponent
   ],
   exports: [
     ServicesEditComponent,

@@ -9,6 +9,7 @@ import {Worker} from '../../../models/Worker';
 })
 export class WorkersListComponent implements OnInit {
 
+
   work = worker;
   selectedWorker: Worker;
 

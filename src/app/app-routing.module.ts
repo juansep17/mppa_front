@@ -12,17 +12,7 @@ import {ServicesEditComponent} from './components/services/services-edit/service
 const routes: Routes = [
     {
       path: 'services',
-      component: ServicesComponent,
-      children: [
-        {
-          path: 'services-add',
-          component: ServicesAddComponent
-        },
-        {
-          path: 'services-edit',
-          component: ServicesEditComponent
-        }
-      ]
+      component: ServicesComponent
     },
 
     {

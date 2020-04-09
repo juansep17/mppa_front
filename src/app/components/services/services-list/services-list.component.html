@@ -14,7 +14,7 @@
         <td>{{service.cost}}</td>
         <td>
           <a (click)="openEdit(service)" class="badge badge-primary badge-pill hover edit">Edit</a>
-          <a class="badge badge-primary badge-pill hover delete">Delete</a>
+          <a (click)="delete(service)" class="badge badge-primary badge-pill hover delete">Delete</a>
         </td>
       </tr>
     </table>

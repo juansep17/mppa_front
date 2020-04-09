@@ -1,15 +1,29 @@
+
 <div class="mitad float-left">
   <h2>Users</h2>
-  <ul class="lista">
-    <li *ngFor="let user of listUser">
-      <h5 class="mb-1"><span class="badge badge-primary badge-pill">{{user.userPK}}</span> {{user.name}} {{user.lastName}} </h5>
-      <small>Documento: {{user.document}}</small>
-      <small>Rol: {{user.rolesFK}}</small>
-    </li>
-  </ul>
+  <a (click)="openAdd()" class="badge badge-primary badge-pill hover add">+ Add</a>
+  <table class="lista table table-bordered table-striped text-center">
+    <tr>
+      <td>Id</td>
+      <td>Name</td>
+      <td>Cost</td>
+      <td>Actions</td>
+    </tr>
+    <tr *ngFor="let user of listUser">
+      <td>{{user.userPK}}</td>
+      <td>{{user.name}}</td>
+      <td>{{user.lastName}}</td>
+      <td>{{user.document}}</td>
+      <td>{{user.rolesFK}}</td>
+      <td>
+        <a (click)="openEdit(user)" class="badge badge-primary badge-pill hover edit">Edit</a>
+        <a (click)="delete(user)" class="badge badge-primary badge-pill hover delete">Delete</a>
+      </td>
+    </tr>
+  </table>
 </div>
+
 <div class="mitad float-right">
-  <app-services-add></app-services-add>
+  <app-users-edit *ngIf="showEdit" [user]="user"></app-users-edit>
+  <app-users-add *ngIf="showAdd"></app-users-add>
 </div>
-<!-- [class.selected]="service === selectedService"
-        (click)="onSelect(service)"  -->
